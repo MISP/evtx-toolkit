@@ -7,7 +7,7 @@ import json
 
 def getpath(path=None):
     if path is None:
-        return False
+        return False, False
     image = path.split("\\")[-1]
     d = "\\".join(path.split("\\")[:-1])
     if not d:

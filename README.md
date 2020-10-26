@@ -4,7 +4,7 @@ Tool to read EVTX files including SYSMON and convert to JSON, MISP Objects and G
 
 # Usage
 
-~~~~
+~~~~shell
 usage: evtx_dump.py [-h] [--verbose] [--noepochconvert] [-o O] [--dump-hashes]
                     evtx
 
@@ -23,7 +23,7 @@ optional arguments:
 
 # Sample
 
-~~~~
+~~~~json
 adulau@dobbertin:~/git/evtx-toolkit$ python3 bin/evtx_dump.py samples/EVTX-ATTACK-SAMPLES/Execution/exec_sysmon_1_ftp.evtx  -o graph  | jq . 
 [
   {

@@ -117,7 +117,6 @@ def graphout(record=None):
         edge['relationship'] = "creates"
         edge['source'] = record['EventData_ProcessGuid']
         (directory, image) = getpath(record['EventData_TargetFilename'])
-        print (directory)
         edge['destination'] = record['EventData_TargetFilename']
         temp.append(edge)
 

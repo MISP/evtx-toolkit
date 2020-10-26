@@ -24,8 +24,12 @@ def parse_record(record=None, epochconvert=True):
         parent = node.tag.split("}")[-1]
         for child in node:
             if parent == "EventData":
-                event_data_type = child.attrib["Name"]
-                temp["{}_{}".format(parent, event_data_type)] = child.text
+                if "Name" in child.attrib:
+                    event_data_type = child.attrib["Name"]
+                    temp["{}_{}".format(parent, event_data_type)] = child.text
+                else:
+                    print("Missing name")
+                    continue
             else:
                 child_name = child.tag.split("}")[-1]
                 if child.attrib:

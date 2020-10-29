@@ -19,6 +19,11 @@ the xxhash of the concatenated values. The node community ID (NCID) can used as 
 |2    |eventkey:value                     |MethodName:GetServerAutoReconnectInfo|
 |3    |channel:eventkey:value             |Microsoft-Windows-PowerShell/Operational:ScriptBlockText:...:
 
+# XXHash
+
+- Default is 0
+- Hash algorithm is [XXH128](https://cyan4973.github.io/xxHash/) (in hex)
+
 # Sample EVT with interesting NCID
 
 ### NCID 2

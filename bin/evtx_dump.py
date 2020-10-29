@@ -28,8 +28,10 @@ def parse_record(record=None, epochconvert=True):
                     event_data_type = child.attrib["Name"]
                     temp["{}_{}".format(parent, event_data_type)] = child.text
                 else:
-                    print("Missing name")
-                    continue
+                    if not "{}_rawdata".format(parent) in temp:
+                        temp["{}_rawdata".format(parent)] = child.text
+                    elif child.text is not None:
+                        temp["{}_rawdata".format(parent)] = temp ["{}_rawdata".format(parent)]  + child.text
             else:
                 child_name = child.tag.split("}")[-1]
                 if child.attrib:
